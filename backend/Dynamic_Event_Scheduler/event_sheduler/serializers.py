@@ -1,6 +1,6 @@
 import datetime
 from rest_framework import serializers
-from .models import Events,Sessions
+from .models import Events,Sessions,registermodel
 
 class EventsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -25,3 +25,8 @@ class SessionsSerializer(serializers.ModelSerializer):
         if data['start_time'] >= data['end_time']:
             raise serializers.ValidationError("End time must be after start time.")
         return data
+
+class register_serializer(serializers.ModelSerializer):
+    class Meta:
+        model = registermodel
+        fields = '__all__'  # You can specify fields you want to include here

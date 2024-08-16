@@ -25,3 +25,11 @@ class Sessions(models.Model):
 
     class Meta:
         db_table = "Sessions"
+
+class registermodel(models.Model):
+    id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)  
+
+    class Meta:
+        db_table = "register"
